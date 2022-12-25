@@ -1,0 +1,158 @@
+sudo apt-get update
+sudo apt-get install apache2 -y
+sudo apt-get install libapache2-mod-php -y
+sudo apt-get install php php-mysql -y
+sudo apt-get install mysql-client -y
+sudo apt-get install mysql-server -y
+git clone url
+got inside where index.html or .php
+sudo cp -rf * /var/www/html/
+cd /var/ww/html
+cd database [go inside where .sql is there]
+sudo mysql -u root -p
+
+ubuntu@ip-10-0-1-232:/var/www/html/database$ ls
+Dockerfile_db  onlineshop.sql
+ubuntu@ip-10-0-1-232:/var/www/html/database$ sudo mysql -u root -p
+Enter password: 
+mysql> CREATE USER 'msis'@'localhost' IDENTIFIED BY 'Msis@123';
+mysql> SELECT * from mysql.user
+    -> ;
++-----------+------------------+-------------+-------------+-------------+-------------+-------------+-----------+-------------+---------------+--------------+-----------+------------+-----------------+------------+------------+--------------+------------+-----------------------+------------------+--------------+-----------------+------------------+------------------+----------------+---------------------+--------------------+------------------+------------+--------------+------------------------+----------+------------------------+--------------------------+----------------------------+---------------+-------------+-----------------+----------------------+-----------------------+------------------------------------------------------------------------+------------------+-----------------------+-------------------+----------------+------------------+----------------+------------------------+---------------------+--------------------------+-----------------+
+| Host      | User             | Select_priv | Insert_priv | Update_priv | Delete_priv | Create_priv | Drop_priv | Reload_priv | Shutdown_priv | Process_priv | File_priv | Grant_priv | References_priv | Index_priv | Alter_priv | Show_db_priv | Super_priv | Create_tmp_table_priv | Lock_tables_priv | Execute_priv | Repl_slave_priv | Repl_client_priv | Create_view_priv | Show_view_priv | Create_routine_priv | Alter_routine_priv | Create_user_priv | Event_priv | Trigger_priv | Create_tablespace_priv | ssl_type | ssl_cipher             | x509_issuer              | x509_subject               | max_questions | max_updates | max_connections | max_user_connections | plugin                | authentication_string                                                  | password_expired | password_last_changed | password_lifetime | account_locked | Create_role_priv | Drop_role_priv | Password_reuse_history | Password_reuse_time | Password_require_current | User_attributes |
++-----------+------------------+-------------+-------------+-------------+-------------+-------------+-----------+-------------+---------------+--------------+-----------+------------+-----------------+------------+------------+--------------+------------+-----------------------+------------------+--------------+-----------------+------------------+------------------+----------------+---------------------+--------------------+------------------+------------+--------------+------------------------+----------+------------------------+--------------------------+----------------------------+---------------+-------------+-----------------+----------------------+-----------------------+------------------------------------------------------------------------+------------------+-----------------------+-------------------+----------------+------------------+----------------+------------------------+---------------------+--------------------------+-----------------+
+| localhost | debian-sys-maint | Y           | Y           | Y           | Y           | Y           | Y         | Y           | Y             | Y            | Y         | Y          | Y               | Y          | Y          | Y            | Y          | Y                     | Y                | Y            | Y               | Y                | Y                | Y              | Y                   | Y                  | Y                | Y          | Y            | Y                      |          | 0x                     | 0x                       | 0x                         |             0 |           0 |               0 |                    0 | caching_sha2_password | $A$005$(7pwa9@c
+n
+ Phn1c5LjIKo/OFG3b4hulCMCsEm6tfu0mZVpc8uz0/RIJG8/ | N                | 2022-12-25 09:38:17   |              NULL | N              | Y                | Y              |                   NULL |                NULL | NULL                     | NULL            |
+| localhost | msis             | N           | N           | N           | N           | N           | N         | N           | N             | N            | N         | N          | N               | N          | N          | N            | N          | N                     | N                | N            | N               | N                | N                | N              | N                   | N                  | N                | N          | N            | N                      |          | 0x                     | 0x                       | 0x                         |             0 |           0 |               0 |                    0 | caching_sha2_password | $A$005$<nrNp[?Ji(Vj68T>rDmtoGizow2rQ95U.QxscF6xKL1vPjA1szwgMuikZQC | N                | 2022-12-25 09:42:44   |              NULL | N              | N                | N              |                   NULL |                NULL | NULL                     | NULL            |
+| localhost | mysql.infoschema | Y           | N           | N           | N           | N           | N         | N           | N             | N            | N         | N          | N               | N          | N          | N            | N          | N                     | N                | N            | N               | N                | N                | N              | N                   | N                  | N                | N          | N            | N                      |          | 0x                     | 0x                       | 0x                         |             0 |           0 |               0 |                    0 | caching_sha2_password | $A$005$THISISACOMBINATIONOFINVALIDSALTANDPASSWORDTHATMUSTNEVERBRBEUSED | N                | 2022-12-25 09:38:16   |              NULL | Y              | N                | N              |                   NULL |                NULL | NULL                     | NULL            |
+| localhost | mysql.session    | N           | N           | N           | N           | N           | N         | N           | Y             | N            | N         | N          | N               | N          | N          | N            | Y          | N                     | N                | N            | N               | N                | N                | N              | N                   | N                  | N                | N          | N            | N                      |          | 0x                     | 0x                       | 0x                         |             0 |           0 |               0 |                    0 | caching_sha2_password | $A$005$THISISACOMBINATIONOFINVALIDSALTANDPASSWORDTHATMUSTNEVERBRBEUSED | N                | 2022-12-25 09:38:16   |              NULL | Y              | N                | N              |                   NULL |                NULL | NULL                     | NULL            |
+| localhost | mysql.sys        | N           | N           | N           | N           | N           | N         | N           | N             | N            | N         | N          | N               | N          | N          | N            | N          | N                     | N                | N            | N               | N                | N                | N              | N                   | N                  | N                | N          | N            | N                      |          | 0x                     | 0x                       | 0x                         |             0 |           0 |               0 |                    0 | caching_sha2_password | $A$005$THISISACOMBINATIONOFINVALIDSALTANDPASSWORDTHATMUSTNEVERBRBEUSED | N                | 2022-12-25 09:38:16   |              NULL | Y              | N                | N              |                   NULL |                NULL | NULL                     | NULL            |
+| localhost | root             | Y           | Y           | Y           | Y           | Y           | Y         | Y           | Y             | Y            | Y         | Y          | Y               | Y          | Y          | Y            | Y          | Y                     | Y                | Y            | Y               | Y                | Y                | Y              | Y                   | Y                  | Y                | Y          | Y            | Y                      |          | 0x                     | 0x                       | 0x                         |             0 |           0 |               0 |                    0 | auth_socket           |                                                                        | N                | 2022-12-25 09:38:15   |              NULL | N              | Y                | Y              |                   NULL |                NULL | NULL                     | NULL            |
++-----------+------------------+-------------+-------------+-------------+-------------+-------------+-----------+-------------+---------------+--------------+-----------+------------+-----------------+------------+------------+--------------+------------+-----------------------+------------------+--------------+-----------------+------------------+------------------+----------------+---------------------+--------------------+------------------+------------+--------------+------------------------+----------+------------------------+--------------------------+----------------------------+---------------+-------------+-----------------+----------------------+-----------------------+------------------------------------------------------------------------+------------------+-----------------------+-------------------+----------------+------------------+----------------+------------------------+---------------------+--------------------------+-----------------+
+6 rows in set (0.00 sec)
+
+mysql> SHOW GRANTS FOR 'msis'@'localhost';
++------------------------------------------+
+| Grants for msis@localhost                |
++------------------------------------------+
+| GRANT USAGE ON *.* TO `msis`@`localhost` |
++------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> show tables;
+ERROR 1046 (3D000): No database selected
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.01 sec)
+
+mysql> create database mywebdb;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| mywebdb            |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> use mywebdb;
+Database changed
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| mywebdb            |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> show tables;
+Empty set (0.00 sec)
+
+mysql> source onlineshop.sql;
+
+mysql> GRANT ALL PRIVILEGES ON mywebdb.* TO 'msis'@'localhost';
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> SHOW GRANTS FOR 'msis'@'localhost';
++-----------------------------------------------------------+
+| Grants for msis@localhost                                 |
++-----------------------------------------------------------+
+| GRANT USAGE ON *.* TO `msis`@`localhost`                  |
+| GRANT ALL PRIVILEGES ON `mywebdb`.* TO `msis`@`localhost` |
++-----------------------------------------------------------+
+2 rows in set (0.00 sec)
+
+mysql> exit
+Bye
+ubuntu@ip-10-0-1-232:/var/www/html/database$ sudo mysql -u msis -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 8.0.31-0ubuntu0.22.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mywebdb            |
+| performance_schema |
++--------------------+
+3 rows in set (0.00 sec)
+
+mysql> use mywebdb;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables;
++-------------------+
+| Tables_in_mywebdb |
++-------------------+
+| admin_info        |
+| brands            |
+| cart              |
+| categories        |
+| email_info        |
+| logs              |
+| order_products    |
+| orders            |
+| orders_info       |
+| products          |
+| user_info         |
+| user_info_backup  |
++-------------------+
+12 rows in set (0.00 sec)
+
+mysql> exit
+Bye
+ubuntu@ip-10-0-1-232:/var/www/html/database$ ls
+Dockerfile_db  onlineshop.sql
+ubuntu@ip-10-0-1-232:/var/www/html/database$ cd ..
+ubuntu@ip-10-0-1-232:/var/www/html$ sudo vi db.php 
+ubuntu@ip-10-0-1-232:/var/www/html$ s
